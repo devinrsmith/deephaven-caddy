@@ -4,15 +4,17 @@ name: deephaven-caddy
 
 services:
   deephaven-foo:
-    build: deephaven/
+    image: ghcr.io/deephaven/server:0.17.0
 
   deephaven-bar:
-    build: deephaven/
+    image: ghcr.io/deephaven/server:0.17.0
 
   reverse-proxy:
-    build: caddy/
+    image: caddy:2.6.2
     restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
       - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
