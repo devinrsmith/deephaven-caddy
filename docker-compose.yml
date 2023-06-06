@@ -4,13 +4,13 @@ name: deephaven-caddy
 
 services:
   deephaven-foo:
-    image: ghcr.io/deephaven/server:0.21.0
+    image: ghcr.io/deephaven/server:0.25.0
 
   deephaven-bar:
-    image: ghcr.io/deephaven/server:0.21.0
+    image: ghcr.io/deephaven/server:0.25.0
 
   reverse-proxy:
-    image: caddy:2.6.2
+    image: caddy:2.6.4
     restart: unless-stopped
     ports:
       - "80:80"
