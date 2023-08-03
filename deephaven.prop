@@ -1,0 +1,5 @@
+includefiles=dh-defaults.prop
+
+proxy.hint=true
+
+AuthHandlers=io.deephaven.auth.AnonymousAuthenticationHandler
