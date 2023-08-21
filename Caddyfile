@@ -1,10 +1,12 @@
 deephaven-foo.localhost {
+    log
     reverse_proxy {
         to h2c://deephaven-foo:10000
     }
 }
 
 deephaven-bar.localhost {
+    log
     reverse_proxy {
         to h2c://deephaven-bar:10000
     }

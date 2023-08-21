@@ -4,17 +4,17 @@ name: deephaven-caddy
 
 services:
   deephaven-foo:
-    image: ghcr.io/deephaven/server:0.26.1
+    image: ghcr.io/deephaven/server:0.27.1
     volumes:
       - ./deephaven.prop:/opt/deephaven/config/deephaven.prop:ro
 
   deephaven-bar:
-    image: ghcr.io/deephaven/server:0.26.1
+    image: ghcr.io/deephaven/server:0.27.1
     volumes:
       - ./deephaven.prop:/opt/deephaven/config/deephaven.prop:ro
 
   reverse-proxy:
-    image: caddy:2.7.2
+    image: caddy:2.7.4
     restart: unless-stopped
     ports:
       - "80:80"
