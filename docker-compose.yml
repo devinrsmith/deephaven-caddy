@@ -1,5 +1,3 @@
-version: '3'
-
 name: deephaven-caddy
 
 services:
