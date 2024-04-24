@@ -3,6 +3,7 @@ deephaven-foo.localhost {
     reverse_proxy {
         to h2c://deephaven-foo:10000
     }
+    tls /dev-certs/deephaven-foo.localhost.chain.crt /dev-certs/deephaven-foo.localhost.key
 }
 
 deephaven-bar.localhost {
@@ -10,4 +11,5 @@ deephaven-bar.localhost {
     reverse_proxy {
         to h2c://deephaven-bar:10000
     }
+    tls /dev-certs/deephaven-bar.localhost.chain.crt /dev-certs/deephaven-bar.localhost.key
 }

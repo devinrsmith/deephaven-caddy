@@ -3,3 +3,6 @@ includefiles=dh-defaults.prop
 proxy.hint=true
 
 AuthHandlers=io.deephaven.auth.AnonymousAuthenticationHandler
+
+outbound.ssl.trust.type=certs
+outbound.ssl.trust.path=/dev-certs/ca.crt

@@ -5,11 +5,17 @@ services:
     image: ghcr.io/deephaven/server:0.33.3
     volumes:
       - ./deephaven.prop:/opt/deephaven/config/deephaven.prop:ro
+      - ./dev-certs/ca.crt:/dev-certs/ca.crt:ro
+    extra_hosts:
+      - "deephaven-bar.localhost:host-gateway"
 
   deephaven-bar:
     image: ghcr.io/deephaven/server:0.33.3
     volumes:
       - ./deephaven.prop:/opt/deephaven/config/deephaven.prop:ro
+      - ./dev-certs/ca.crt:/dev-certs/ca.crt:ro
+    extra_hosts:
+      - "deephaven-foo.localhost:host-gateway"
 
   reverse-proxy:
     image: caddy:2.7.6
@@ -20,3 +26,4 @@ services:
       - "443:443/udp"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./dev-certs:/dev-certs:ro
