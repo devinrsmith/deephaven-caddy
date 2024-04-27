@@ -2,12 +2,12 @@ name: deephaven-caddy
 
 services:
   deephaven-foo:
-    image: ghcr.io/deephaven/server:0.33.3
+    image: ghcr.io/deephaven/server:0.34.0
     volumes:
       - ./deephaven.prop:/opt/deephaven/config/deephaven.prop:ro
 
   deephaven-bar:
-    image: ghcr.io/deephaven/server:0.33.3
+    image: ghcr.io/deephaven/server:0.34.0
     volumes:
       - ./deephaven.prop:/opt/deephaven/config/deephaven.prop:ro
 
