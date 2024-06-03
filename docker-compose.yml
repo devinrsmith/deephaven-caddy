@@ -12,7 +12,7 @@ services:
       - ./deephaven.prop:/opt/deephaven/config/deephaven.prop:ro
 
   reverse-proxy:
-    image: caddy:2.8.1
+    image: caddy:2.8.4
     restart: unless-stopped
     ports:
       - "80:80"
