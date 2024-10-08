@@ -2,7 +2,7 @@ name: deephaven-caddy
 
 services:
   deephaven-foo:
-    image: ghcr.io/deephaven/server:0.33.3
+    image: ghcr.io/deephaven/server:0.36.1
     volumes:
       - ./deephaven.prop:/opt/deephaven/config/deephaven.prop:ro
       - ./dev-certs/ca.crt:/dev-certs/ca.crt:ro
@@ -10,7 +10,7 @@ services:
       - "deephaven-bar.localhost:host-gateway"
 
   deephaven-bar:
-    image: ghcr.io/deephaven/server:0.33.3
+    image: ghcr.io/deephaven/server:0.36.1
     volumes:
       - ./deephaven.prop:/opt/deephaven/config/deephaven.prop:ro
       - ./dev-certs/ca.crt:/dev-certs/ca.crt:ro
@@ -18,7 +18,7 @@ services:
       - "deephaven-foo.localhost:host-gateway"
 
   reverse-proxy:
-    image: caddy:2.7.6
+    image: caddy:2.8.4
     restart: unless-stopped
     ports:
       - "80:80"
